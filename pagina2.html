@@ -1,85 +1,86 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Estado del Proyecto</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <meta charset="UTF-8">
+  <title>Consulta de Proyecto</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
-
+<body class="pagina2">
   <header class="header">
     <div class="header-container">
       <img src="assets/logo.png" alt="Logo" class="logo">
-      <h1>Tu Empresa</h1>
-      <button id="menu-toggle">☰</button>
+      <nav>
+        <a href="index.html">Inicio</a>
+      </nav>
     </div>
-    <nav id="menu" class="hidden">
-      <a href="index.html">Inicio</a>
-      <a href="pagina2.html">Estado del Proyecto</a>
-      <a href="contacto.html">Contáctanos</a>
-    </nav>
   </header>
 
   <main>
-    <section>
+    <section class="proyecto">
       <h2>Revisa aquí el estado de tu proyecto</h2>
       <p>Ingresa tu código para ver el estado actual</p>
       <input type="text" id="codigo" placeholder="Ingresa tu código de proceso">
-      <button onclick="buscarCodigo()">Buscar</button>
+      <button class="boton" onclick="buscarCodigo()">Buscar</button>
 
-      <div id="resultado" style="display: none; margin-top: 30px;">
+      <div id="resultado">
         <h3>Información del Cliente</h3>
-        <p><strong>Nombre:</strong> <span id="nombre"></span></p>
-        <p><strong>ID:</strong> <span id="id"></span></p>
-        <p><strong>Dirección:</strong> <span id="direccion"></span></p>
-        <p><strong>Código:</strong> <span id="codigoResultado"></span></p>
-        <p><strong>Estado:</strong> <span id="estado"></span></p>
-        <p><strong>Proceso:</strong> <span id="proceso"></span></p>
-        <p><strong>Pagos:</strong> <span id="pagos"></span></p>
-        <p><strong>Documentos:</strong> <a id="documento" href="#" target="_blank">Descargar</a></p>
-        <br><br>
-        <a href="index.html" class="boton">Volver al inicio</a>
+        <div><strong>Nombre:</strong> <span id="nombre"></span></div>
+        <div><strong>ID:</strong> <span id="id"></span></div>
+        <div><strong>Dirección:</strong> <span id="direccion"></span></div>
+        <div><strong>Código de proceso:</strong> <span id="codigoResultado"></span></div>
+        <div><strong>Estado:</strong> <span id="estado"></span></div>
+        <div><strong>Proceso:</strong> <span id="proceso"></span></div>
+        <div><strong>Pagos:</strong> <span id="pagos"></span></div>
       </div>
+
+      <br>
+      <a href="index.html" class="boton">Volver al inicio</a>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 Tu Empresa | contacto@tuempresa.com</p>
+    &copy; 2025 Tu Empresa. Todos los derechos reservados.
   </footer>
 
   <script>
-    const toggle = document.getElementById('menu-toggle');
-    const menu = document.getElementById('menu');
-    toggle.addEventListener('click', () => {
-      menu.classList.toggle('hidden');
-    });
-
     async function buscarCodigo() {
       const codigoIngresado = document.getElementById("codigo").value.trim();
+      const resultadoDiv = document.getElementById("resultado");
+
+      const nombreSpan = document.getElementById("nombre");
+      const idSpan = document.getElementById("id");
+      const direccionSpan = document.getElementById("direccion");
+      const codigoSpan = document.getElementById("codigoResultado");
+      const estadoSpan = document.getElementById("estado");
+      const procesoSpan = document.getElementById("proceso");
+      const pagosSpan = document.getElementById("pagos");
+
       const sheetURL = 'https://api.sheetbest.com/sheets/4f4bc6d7-4659-4353-bd1e-fd5b4a6aa70f';
       const response = await fetch(sheetURL);
       const data = await response.json();
+
       const resultado = data.find(item => item.codigo === codigoIngresado);
 
-      const resultadoDiv = document.getElementById("resultado");
       if (resultado) {
-        document.getElementById("nombre").textContent = resultado.nombre || "-";
-        document.getElementById("id").textContent = resultado.id || "-";
-        document.getElementById("direccion").textContent = resultado.direccion || "-";
-        document.getElementById("codigoResultado").textContent = resultado.codigo || "-";
-        document.getElementById("estado").textContent = resultado.estado || "-";
-        document.getElementById("proceso").textContent = resultado.proceso || "-";
-        document.getElementById("pagos").textContent = resultado.pagos || "-";
-        document.getElementById("documento").href = resultado.documento || "#";
+        nombreSpan.textContent = resultado.nombre || "-";
+        idSpan.textContent = resultado.id || "-";
+        direccionSpan.textContent = resultado.direccion || "-";
+        codigoSpan.textContent = resultado.codigo || "-";
+        estadoSpan.textContent = resultado.estado || "-";
+        procesoSpan.textContent = resultado.proceso || "-";
+        pagosSpan.textContent = resultado.pagos || "-";
         resultadoDiv.style.display = 'block';
       } else {
-        resultadoDiv.innerHTML = "<p>Código no encontrado.</p>";
+        nombreSpan.textContent = 'No encontrado';
+        idSpan.textContent = '-';
+        direccionSpan.textContent = '-';
+        codigoSpan.textContent = '-';
+        estadoSpan.textContent = '-';
+        procesoSpan.textContent = '-';
+        pagosSpan.textContent = '-';
         resultadoDiv.style.display = 'block';
       }
     }
   </script>
-
 </body>
 </html>
