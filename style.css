@@ -102,7 +102,7 @@ section {
   text-align: center;
 }
 
-/* Sección 1: Quienes somos */
+/* Sección 1: Quiénes somos */
 section:nth-of-type(1) {
   background-color: #003f46;
   color: white;
@@ -136,6 +136,10 @@ section:nth-of-type(4) {
 }
 section:nth-of-type(4) h2 {
   color: #f9b621;
+}
+
+.oficinas-grid .oficina {
+  color: #000000; /* Texto negro en los cuadros flotantes */
 }
 
 /* Sección 5: Por qué elegirnos */
@@ -177,6 +181,7 @@ section h2 {
   border-radius: 6px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   text-align: center;
+  color: #000000; /* Asegura que el texto dentro del bloque también sea negro */
 }
 
 /* === Footer === */
