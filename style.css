@@ -104,7 +104,7 @@ section {
 
 /* Sección 1: Quiénes somos */
 section:nth-of-type(1) {
-  background-color: #003f46;
+  background-color: #f1f1f1;
   color: white;
 }
 section:nth-of-type(1) h2 {
@@ -113,11 +113,11 @@ section:nth-of-type(1) h2 {
 
 /* Sección 2: Nuestros Servicios */
 section:nth-of-type(2) {
-  background-color: #f1f1f1;
+  background-color: #003f46;
   color: white;
 }
 section:nth-of-type(2) h2 {
-  color: #f9b621;
+  color: white;
 }
 
 /* Sección 3: Áreas en las que servimos */
