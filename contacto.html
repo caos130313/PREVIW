@@ -11,10 +11,15 @@
 
   <header class="header">
     <div class="header-container">
-      <a href="index.html" class="boton">Volver al inicio</a>
       <img src="assets/logo.png" alt="Logo" class="logo">
       <h1>Tu Empresa</h1>
+      <button id="menu-toggle">☰</button>
     </div>
+    <nav id="menu" class="hidden">
+      <a href="index.html">Inicio</a>
+      <a href="pagina2.html">Estado del Proyecto</a>
+      <a href="contacto.html">Contáctanos</a>
+    </nav>
   </header>
 
   <main>
@@ -27,12 +32,22 @@
       <p><strong>Dirección:</strong> Calle 123 #45-67, Ibagué, Colombia</p>
 
       <a href="mailto:contacto@tuempresa.com" class="boton">Enviar correo</a>
+      <br><br>
+      <a href="index.html" class="boton">Volver al inicio</a>
     </section>
   </main>
 
   <footer>
     <p>&copy; 2025 Tu Empresa | contacto@tuempresa.com</p>
   </footer>
+
+  <script>
+    const toggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  </script>
 
 </body>
 </html>
