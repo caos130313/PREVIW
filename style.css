@@ -66,6 +66,7 @@ ul li {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  color: white;
 }
 
 .logo {
@@ -75,6 +76,12 @@ ul li {
 nav {
   display: flex;
   gap: 15px;
+  color: white;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
 }
 
 nav.hidden {
@@ -95,24 +102,49 @@ section {
   text-align: center;
 }
 
-/* Alternar colores para la página de inicio */
+/* Sección 1: Quienes somos */
 section:nth-of-type(1) {
   background-color: #ffffff;
-}
-section:nth-of-type(2) {
-  background-color: #003f46;
-  color:white;
-}
-section:nth-of-type(3) {
-  background-color: #04353c;
   color: white;
 }
-section:nth-of-type(4) {
+section:nth-of-type(1) h2 {
+  color: white;
+}
+
+/* Sección 2: Nuestros Servicios */
+section:nth-of-type(2) {
   background-color: #f1f1f1;
   color: white;
 }
-section:nth-of-type(5) {
+section:nth-of-type(2) h2 {
+  color: #f9b621;
+}
+
+/* Sección 3: Áreas en las que servimos */
+section:nth-of-type(3) {
+  background-color: #04353c;
+  color: #222;
+}
+section:nth-of-type(3) h2 {
+  color: #222;
+}
+
+/* Sección 4: Oficinas en el país */
+section:nth-of-type(4) {
   background-color: #003f46;
+  color: white;
+}
+section:nth-of-type(4) h2 {
+  color: #f9b621;
+}
+
+/* Sección 5: Por qué elegirnos */
+section:nth-of-type(5) {
+  background-color: #08353c;
+  color: white;
+}
+section:nth-of-type(5) h2 {
+  color: white;
 }
 
 section h2 {
