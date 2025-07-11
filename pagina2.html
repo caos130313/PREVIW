@@ -8,11 +8,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
-  <header class="header-contacto">
+
+  <header class="header">
     <div class="header-container">
-      <img src="assets/logo.png" alt="Logo de Tu Empresa" class="logo" />
+      <img src="assets/logo.png" alt="Logo" class="logo">
       <h1>Tu Empresa</h1>
-      <button id="menu-toggle" aria-label="Abrir menú">☰</button>
+      <button id="menu-toggle">☰</button>
     </div>
     <nav id="menu" class="hidden">
       <a href="index.html">Inicio</a>
@@ -21,96 +22,56 @@
     </nav>
   </header>
 
-  <main class="contacto-section">
-    <section class="estado-proyecto">
-      <h2>Consulta el estado de tu proyecto</h2>
-      <p>Ingresa tu código de proceso para conocer el estado actual:</p>
-      <input type="text" id="codigo" placeholder="Ingresa tu código de proceso" />
+  <main>
+    <section>
+      <h2>Revisa aquí el estado de tu proyecto</h2>
+      <p>Ingresa tu código para ver el estado actual</p>
+      <input type="text" id="codigo" placeholder="Ingresa tu código de proceso">
       <button onclick="buscarCodigo()">Buscar</button>
 
-      <div id="resultado" style="display: none;">
+      <div id="resultado" style="display: none; margin-top: 30px;">
         <h3>Información del Cliente</h3>
         <p><strong>Nombre:</strong> <span id="nombre"></span></p>
         <p><strong>ID:</strong> <span id="id"></span></p>
         <p><strong>Dirección:</strong> <span id="direccion"></span></p>
-        <p><strong>Código de proceso:</strong> <span id="codigoResultado"></span></p>
+        <p><strong>Código:</strong> <span id="codigoResultado"></span></p>
         <p><strong>Estado:</strong> <span id="estado"></span></p>
         <p><strong>Proceso:</strong> <span id="proceso"></span></p>
         <p><strong>Pagos:</strong> <span id="pagos"></span></p>
-
-        <!-- Nuevos enlaces de descarga -->
-        <div id="descargas"></div>
+        <p><strong>Documentos:</strong> <a id="documento" href="#" target="_blank">Descargar</a></p>
       </div>
     </section>
-
-    <div class="boton-volver">
-      <a href="index.html" class="boton">Volver al inicio</a>
-    </div>
   </main>
 
   <footer>
-    <p>&copy; 2025 Tu Empresa | contacto@tuempresa.com | +57 300 000 0000</p>
+    <p>&copy; 2025 Tu Empresa | contacto@tuempresa.com</p>
   </footer>
 
   <script>
     async function buscarCodigo() {
       const codigoIngresado = document.getElementById("codigo").value.trim();
-      const resultadoDiv = document.getElementById("resultado");
-
-      const nombreSpan = document.getElementById("nombre");
-      const idSpan = document.getElementById("id");
-      const direccionSpan = document.getElementById("direccion");
-      const codigoSpan = document.getElementById("codigoResultado");
-      const estadoSpan = document.getElementById("estado");
-      const procesoSpan = document.getElementById("proceso");
-      const pagosSpan = document.getElementById("pagos");
-
       const sheetURL = 'https://api.sheetbest.com/sheets/4f4bc6d7-4659-4353-bd1e-fd5b4a6aa70f';
+      const response = await fetch(sheetURL);
+      const data = await response.json();
+      const resultado = data.find(item => item.codigo === codigoIngresado);
 
-      try {
-        const response = await fetch(sheetURL);
-        const data = await response.json();
-        const resultado = data.find(item => item.codigo === codigoIngresado);
-
-        if (resultado) {
-          nombreSpan.textContent = resultado.nombre || "-";
-          idSpan.textContent = resultado.id || "-";
-          direccionSpan.textContent = resultado.direccion || "-";
-          codigoSpan.textContent = resultado.codigo || "-";
-          estadoSpan.textContent = resultado.estado || "-";
-          procesoSpan.textContent = resultado.proceso || "-";
-          pagosSpan.textContent = resultado.pagos || "-";
-
-          // Sección de descargas dinámicas
-          const doc1Link = resultado.documento1;
-          const doc2Link = resultado.documento2;
-
-          const descargaHTML = [];
-
-          if (doc1Link) {
-            descargaHTML.push(`<p><a href="${doc1Link}" target="_blank" download>📄 Descargar Documento 1</a></p>`);
-          }
-          if (doc2Link) {
-            descargaHTML.push(`<p><a href="${doc2Link}" target="_blank" download>📄 Descargar Documento 2</a></p>`);
-          }
-
-          document.getElementById("descargas").innerHTML = descargaHTML.join('');
-        } else {
-          nombreSpan.textContent = 'No encontrado';
-          idSpan.textContent = '-';
-          direccionSpan.textContent = '-';
-          codigoSpan.textContent = '-';
-          estadoSpan.textContent = '-';
-          procesoSpan.textContent = '-';
-          pagosSpan.textContent = '-';
-          document.getElementById("descargas").innerHTML = '';
-        }
-
+      const resultadoDiv = document.getElementById("resultado");
+      if (resultado) {
+        document.getElementById("nombre").textContent = resultado.nombre || "-";
+        document.getElementById("id").textContent = resultado.id || "-";
+        document.getElementById("direccion").textContent = resultado.direccion || "-";
+        document.getElementById("codigoResultado").textContent = resultado.codigo || "-";
+        document.getElementById("estado").textContent = resultado.estado || "-";
+        document.getElementById("proceso").textContent = resultado.proceso || "-";
+        document.getElementById("pagos").textContent = resultado.pagos || "-";
+        document.getElementById("documento").href = resultado.documento || "#";
         resultadoDiv.style.display = 'block';
-      } catch (error) {
-        alert('Hubo un problema al consultar los datos. Intenta más tarde.');
+      } else {
+        resultadoDiv.innerHTML = "<p>Código no encontrado.</p>";
+        resultadoDiv.style.display = 'block';
       }
     }
   </script>
+
 </body>
 </html>
