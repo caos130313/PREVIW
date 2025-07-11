@@ -1,53 +1,36 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
   <title>Contáctanos</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
-
+<body class="contacto">
   <header class="header">
     <div class="header-container">
       <img src="assets/logo.png" alt="Logo" class="logo">
-      <h1>Tu Empresa</h1>
-      <button id="menu-toggle">☰</button>
+      <nav>
+        <a href="index.html">Inicio</a>
+      </nav>
     </div>
-    <nav id="menu" class="hidden">
-      <a href="index.html">Inicio</a>
-      <a href="pagina2.html">Estado del Proyecto</a>
-      <a href="contacto.html">Contáctanos</a>
-    </nav>
   </header>
 
   <main>
-    <section>
-      <h2><i class="fas fa-envelope"></i> Contáctanos</h2>
+    <section class="info-contacto">
+      <h2>Contáctanos</h2>
       <p>Estamos aquí para ayudarte. Escríbenos o visítanos.</p>
+      <p>Email: contacto@tuempresa.com</p>
+      <p>Teléfono: +57 300 123 4567</p>
+      <p>Dirección: Calle 123 #45-67, Ibagué, Colombia</p>
 
-      <p><strong>Email:</strong> contacto@tuempresa.com</p>
-      <p><strong>Teléfono:</strong> +57 300 123 4567</p>
-      <p><strong>Dirección:</strong> Calle 123 #45-67, Ibagué, Colombia</p>
-
-      <a href="mailto:contacto@tuempresa.com" class="boton">Enviar correo</a>
+      <a href="mailto:contacto@tuempresa.com" class="boton">Enviar Correo</a>
       <br><br>
       <a href="index.html" class="boton">Volver al inicio</a>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 Tu Empresa | contacto@tuempresa.com</p>
+    &copy; 2025 Tu Empresa. Todos los derechos reservados.
   </footer>
-
-  <script>
-    const toggle = document.getElementById('menu-toggle');
-    const menu = document.getElementById('menu');
-    toggle.addEventListener('click', () => {
-      menu.classList.toggle('hidden');
-    });
-  </script>
-
 </body>
 </html>
