@@ -104,7 +104,7 @@ section {
 
 /* Sección 1: Quiénes somos */
 section:nth-of-type(1) {
-  background-color: #f1f1f1;
+  background-color: #003f46;
   color: white;
 }
 section:nth-of-type(1) h2 {
