@@ -2,14 +2,15 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Inicio - Tu Empresa</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
-  <header>
+  <header class="header-contacto">
     <div class="header-container">
-      <img src="assets/logo.png" alt="Logo de Tu Empresa" class="logo"/>
+      <img src="assets/logo.png" alt="Logo de Tu Empresa" class="logo" />
       <h1>Tu Empresa</h1>
       <button id="menu-toggle" aria-label="Abrir menú">☰</button>
     </div>
@@ -20,34 +21,42 @@
     </nav>
   </header>
 
-  <section class="hero">
-    <img src="assets/banner.jpg" alt="Imagen principal" />
-  </section>
+  <main>
+    <!-- Imagen destacada -->
+    <section class="hero">
+      <img src="assets/banner.jpg" alt="Imagen principal" class="banner-contact" />
+    </section>
 
-  <section class="presentacion">
-    <img src="assets/logo-sec.png" alt="Logo secundario" class="icon" />
-    <h2>Bienvenido a Tu Empresa</h2>
-    <p>Ofrecemos soluciones visuales a medida que conectan con tu audiencia.</p>
-    <div class="botones">
+    <!-- Título, logo secundario, descripción y botón de contacto -->
+    <section class="presentacion">
+      <img src="assets/logo-sec.png" alt="Logo Secundario" class="logo-secundario" />
+      <h2>Bienvenido a Tu Empresa</h2>
+      <p>Ofrecemos soluciones digitales personalizadas para tu negocio. ¡Estamos listos para trabajar contigo!</p>
       <a href="contacto.html" class="boton">Contáctanos</a>
+    </section>
+
+    <!-- Sección de estado del proyecto -->
+    <section class="estado-proyecto">
+      <h2>Revisa aquí el estado de tu proyecto</h2>
       <a href="pagina2.html" class="boton">Ingresa tus datos</a>
-    </div>
-  </section>
+    </section>
 
-  <section class="servicios">
-    <h2>Servicios que ofrecemos</h2>
-    <ul>
-      <li>Diseño Gráfico</li>
-      <li>Branding</li>
-      <li>Diseño Web</li>
-      <li>Ilustración</li>
-      <li>Asesoría Visual</li>
-    </ul>
-  </section>
+    <!-- Servicios -->
+    <section class="servicios">
+      <h2>Nuestros Servicios</h2>
+      <ul>
+        <li><i class="fas fa-paint-brush"></i> Diseño Gráfico</li>
+        <li><i class="fas fa-code"></i> Desarrollo Web</li>
+        <li><i class="fas fa-mobile-alt"></i> Diseño UI/UX</li>
+        <li><i class="fas fa-bullhorn"></i> Marketing Digital</li>
+      </ul>
+    </section>
 
-  <footer>
-    <p>&copy; 2025 Tu Empresa | contacto@tuempresa.com | +57 000 0000000</p>
-  </footer>
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2025 Tu Empresa | contacto@tuempresa.com | +57 300 000 0000</p>
+    </footer>
+  </main>
 
   <script src="script.js"></script>
 </body>
