@@ -8,11 +8,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
-  <header class="header-contacto">
+  <header class="header">
     <div class="header-container">
-      <img src="assets/logo.png" alt="Logo de Tu Empresa" class="logo" />
+      <img src="assets/logo.png" alt="Logo" class="logo">
       <h1>Tu Empresa</h1>
-      <button id="menu-toggle" aria-label="Abrir menú">☰</button>
+      <button id="menu-toggle">☰</button>
     </div>
     <nav id="menu" class="hidden">
       <a href="index.html">Inicio</a>
@@ -22,41 +22,85 @@
   </header>
 
   <main>
-    <!-- Imagen destacada -->
+    <!-- HERO / BANNER -->
     <section class="hero">
-      <img src="assets/banner.jpg" alt="Imagen principal" class="banner-contact" />
+      <img src="assets/home-banner.jpg" alt="Imagen principal" class="banner">
     </section>
 
-    <!-- Título, logo secundario, descripción y botón de contacto -->
-    <section class="presentacion">
-      <img src="assets/logo-sec.png" alt="Logo Secundario" class="logo-secundario" />
-      <h2>Bienvenido a Tu Empresa</h2>
-      <p>Ofrecemos soluciones digitales personalizadas para tu negocio. ¡Estamos listos para trabajar contigo!</p>
-      <a href="contacto.html" class="boton">Contáctanos</a>
+    <!-- QUIÉNES SOMOS -->
+    <section class="quienes-somos">
+      <h2><i class="fas fa-users"></i> ¿Quiénes somos?</h2>
+      <p>Somos una empresa dedicada a brindar soluciones efectivas y personalizadas para cada cliente, con profesionales expertos en sus áreas.</p>
     </section>
 
-    <!-- Sección de estado del proyecto -->
-    <section class="estado-proyecto">
-      <h2>Revisa aquí el estado de tu proyecto</h2>
-      <a href="pagina2.html" class="boton">Ingresa tus datos</a>
-    </section>
-
-    <!-- Servicios -->
+    <!-- NUESTROS SERVICIOS -->
     <section class="servicios">
-      <h2>Nuestros Servicios</h2>
+      <h2><i class="fas fa-briefcase"></i> Nuestros Servicios</h2>
       <ul>
-        <li><i class="fas fa-paint-brush"></i> Diseño Gráfico</li>
-        <li><i class="fas fa-code"></i> Desarrollo Web</li>
-        <li><i class="fas fa-mobile-alt"></i> Diseño UI/UX</li>
-        <li><i class="fas fa-bullhorn"></i> Marketing Digital</li>
+        <li>Consultoría Legal</li>
+        <li>Gestión de Proyectos</li>
+        <li>Diseño Web</li>
+        <li>Marketing Digital</li>
       </ul>
     </section>
 
-    <!-- Footer -->
-    <footer>
-      <p>&copy; 2025 Tu Empresa | contacto@tuempresa.com | +57 300 000 0000</p>
-    </footer>
+    <!-- ÁREAS EN LAS QUE SERVIMOS -->
+    <section class="areas-servicio">
+      <h2><i class="fas fa-globe"></i> Áreas en las que servimos</h2>
+      <p>Prestamos nuestros servicios en todo el territorio nacional, incluyendo:</p>
+      <ul>
+        <li>Bogotá</li>
+        <li>Medellín</li>
+        <li>Cali</li>
+        <li>Ibagué</li>
+        <li>Barranquilla</li>
+        <li>Y más...</li>
+      </ul>
+    </section>
+
+    <!-- NUESTRAS OFICINAS -->
+    <section class="nuestras-oficinas">
+      <h2><i class="fas fa-building"></i> Oficinas en el país</h2>
+      <div class="oficinas-grid">
+        <div class="oficina">
+          <h3>Bogotá</h3>
+          <p>Calle 123 #45-67</p>
+        </div>
+        <div class="oficina">
+          <h3>Medellín</h3>
+          <p>Carrera 89 #12-34</p>
+        </div>
+        <div class="oficina">
+          <h3>Ibagué</h3>
+          <p>Calle Ficticia 123</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ¿POR QUÉ ELEGIRNOS? -->
+    <section class="por-que-elegirnos">
+      <h2><i class="fas fa-star"></i> ¿Por qué elegirnos?</h2>
+      <p>Contamos con más de 10 años de experiencia, atención personalizada y acompañamiento en cada etapa del proceso.</p>
+    </section>
+
+    <!-- CONTACTO CTA -->
+    <section class="cta-contacto">
+      <h2><i class="fas fa-phone"></i> ¿Necesitas ayuda?</h2>
+      <p>Comunícate con nosotros y resolveremos todas tus dudas.</p>
+      <a href="contacto.html" class="boton">Contáctanos</a>
+    </section>
+
+    <!-- CONSULTA DE PROYECTO -->
+    <section class="busqueda">
+      <h2><i class="fas fa-search"></i> Revisa aquí el estado de tu proyecto</h2>
+      <p>Consulta en línea ingresando tu código</p>
+      <a href="pagina2.html" class="boton">Ingresa tus datos</a>
+    </section>
   </main>
+
+  <footer>
+    <p>&copy; 2025 Tu Empresa | contacto@tuempresa.com</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
