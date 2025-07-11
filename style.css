@@ -123,7 +123,7 @@ section:nth-of-type(2) h2 {
 /* Sección 3: Áreas en las que servimos */
 section:nth-of-type(3) {
   background-color: #04353c;
-  color: #222;
+  color: white;
 }
 section:nth-of-type(3) h2 {
   color: #222;
