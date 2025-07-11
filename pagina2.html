@@ -2,20 +2,16 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Estado del Proyecto</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body class="proyecto">
+
   <header class="header">
     <div class="header-container">
       <img src="assets/logo.png" alt="Logo" class="logo">
       <h1>Tu Empresa</h1>
-      <nav>
-        <a href="index.html">Inicio</a>
-        <a href="pagina2.html">Estado del Proyecto</a>
-        <a href="contacto.html">Contáctanos</a>
-      </nav>
     </div>
   </header>
 
@@ -24,20 +20,24 @@
       <h2><i class="fas fa-search"></i> Revisa aquí el estado de tu proyecto</h2>
       <p>Ingresa tu código para ver el estado actual</p>
       <input type="text" id="codigo" placeholder="Ingresa tu código de proceso" />
-      <button onclick="buscarCodigo()" class="boton">Buscar</button>
+      <button class="boton" onclick="buscarCodigo()">Buscar</button>
+    </section>
 
-      <div id="resultado" style="display: none; margin-top: 30px;">
-        <h2>Información del Cliente</h2>
-        <div class="campo"><strong>Nombre:</strong> <span id="nombre"></span></div>
-        <div class="campo"><strong>ID:</strong> <span id="id"></span></div>
-        <div class="campo"><strong>Dirección:</strong> <span id="direccion"></span></div>
-        <div class="campo"><strong>Código de proceso:</strong> <span id="codigoResultado"></span></div>
-        <div class="campo"><strong>Estado:</strong> <span id="estado"></span></div>
-        <div class="campo"><strong>Proceso:</strong> <span id="proceso"></span></div>
-        <div class="campo"><strong>Pagos:</strong> <span id="pagos"></span></div>
+    <section id="resultado" style="display: none;">
+      <h2>Información del Cliente</h2>
+      <div class="campo"><strong>Nombre:</strong> <span id="nombre"></span></div>
+      <div class="campo"><strong>ID:</strong> <span id="id"></span></div>
+      <div class="campo"><strong>Dirección:</strong> <span id="direccion"></span></div>
+      <div class="campo"><strong>Código de proceso:</strong> <span id="codigoResultado"></span></div>
+      <div class="campo"><strong>Estado:</strong> <span id="estado"></span></div>
+      <div class="campo"><strong>Proceso:</strong> <span id="proceso"></span></div>
+      <div class="campo"><strong>Pagos:</strong> <span id="pagos"></span></div>
+      <div class="campo"><strong>Documento:</strong> 
+        <a id="documento" href="#" target="_blank" class="boton">Descargar</a>
       </div>
+    </section>
 
-      <br>
+    <section>
       <a href="index.html" class="boton">Volver al inicio</a>
     </section>
   </main>
@@ -58,38 +58,47 @@
       const estadoSpan = document.getElementById("estado");
       const procesoSpan = document.getElementById("proceso");
       const pagosSpan = document.getElementById("pagos");
+      const documentoLink = document.getElementById("documento");
 
       const sheetURL = 'https://api.sheetbest.com/sheets/4f4bc6d7-4659-4353-bd1e-fd5b4a6aa70f';
 
-      try {
-        const response = await fetch(sheetURL);
-        const data = await response.json();
+      const response = await fetch(sheetURL);
+      const data = await response.json();
 
-        const resultado = data.find(item => item.codigo === codigoIngresado);
+      const resultado = data.find(item => item.codigo === codigoIngresado);
 
-        if (resultado) {
-          nombreSpan.textContent = resultado.nombre || "-";
-          idSpan.textContent = resultado.id || "-";
-          direccionSpan.textContent = resultado.direccion || "-";
-          codigoSpan.textContent = resultado.codigo || "-";
-          estadoSpan.textContent = resultado.estado || "-";
-          procesoSpan.textContent = resultado.proceso || "-";
-          pagosSpan.textContent = resultado.pagos || "-";
+      if (resultado) {
+        nombreSpan.textContent = resultado.nombre || "-";
+        idSpan.textContent = resultado.id || "-";
+        direccionSpan.textContent = resultado.direccion || "-";
+        codigoSpan.textContent = resultado.codigo || "-";
+        estadoSpan.textContent = resultado.estado || "-";
+        procesoSpan.textContent = resultado.proceso || "-";
+        pagosSpan.textContent = resultado.pagos || "-";
+
+        if (resultado.documento) {
+          documentoLink.href = resultado.documento;
+          documentoLink.textContent = "Descargar";
         } else {
-          nombreSpan.textContent = 'No encontrado';
-          idSpan.textContent = '-';
-          direccionSpan.textContent = '-';
-          codigoSpan.textContent = '-';
-          estadoSpan.textContent = '-';
-          procesoSpan.textContent = '-';
-          pagosSpan.textContent = '-';
+          documentoLink.href = "#";
+          documentoLink.textContent = "No disponible";
         }
 
-        resultadoDiv.style.display = 'block';
-      } catch (error) {
-        alert('Error al consultar los datos. Intenta más tarde.');
+        resultadoDiv.style.display = "block";
+      } else {
+        nombreSpan.textContent = "No encontrado";
+        idSpan.textContent = "-";
+        direccionSpan.textContent = "-";
+        codigoSpan.textContent = "-";
+        estadoSpan.textContent = "-";
+        procesoSpan.textContent = "-";
+        pagosSpan.textContent = "-";
+        documentoLink.href = "#";
+        documentoLink.textContent = "No disponible";
+        resultadoDiv.style.display = "block";
       }
     }
   </script>
+
 </body>
 </html>
