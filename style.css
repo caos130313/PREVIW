@@ -1,0 +1,187 @@
+/* Estilo general */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+h1, h2 {
+  color: #002244;
+  margin-bottom: 0.5em;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Header */
+header {
+  background-color: #002244;
+  color: white;
+  padding: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-container .logo {
+  width: 50px;
+  height: auto;
+  margin-right: 10px;
+}
+
+nav {
+  margin-top: 10px;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  margin: 0 15px;
+  font-weight: bold;
+}
+
+nav.hidden {
+  display: none;
+}
+
+/* Hero Section */
+.hero img,
+.hero-contact img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Presentación */
+.presentacion {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #ffffff;
+}
+
+.presentacion .icon {
+  width: 80px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.presentacion .botones {
+  margin-top: 20px;
+}
+
+.boton {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #cc0000;
+  color: white;
+  border-radius: 5px;
+  margin: 10px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.boton:hover {
+  background-color: #990000;
+}
+
+/* Servicios */
+.servicios {
+  padding: 40px 20px;
+  background-color: #f0f0f0;
+  text-align: center;
+}
+
+.servicios ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.servicios li {
+  padding: 10px 0;
+  font-weight: 500;
+}
+
+/* Contacto */
+.contacto-section {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.banner-contact {
+  width: 100%;
+  height: auto;
+  margin-bottom: 30px;
+}
+
+.info-contacto {
+  text-align: left;
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.info-contacto p {
+  margin: 10px 0;
+  font-size: 1rem;
+}
+
+.info-contacto i {
+  color: #cc0000;
+  margin-right: 10px;
+}
+
+/* Formulario y resultado consulta */
+input[type="text"] {
+  padding: 10px;
+  width: 300px;
+  max-width: 90%;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #cc0000;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+#resultado {
+  margin-top: 30px;
+  padding: 20px;
+  background: white;
+  display: none;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
+/* Footer */
+footer {
+  background: #002244;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  font-size: 0.9rem;
+}
