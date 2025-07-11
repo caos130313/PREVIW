@@ -104,7 +104,7 @@ section {
 
 /* Sección 1: Quiénes somos */
 section:nth-of-type(1) {
-  background-color: #f1f1f1;
+  background-color: #003f46;
   color: white;
 }
 section:nth-of-type(1) h2 {
@@ -113,7 +113,7 @@ section:nth-of-type(1) h2 {
 
 /* Sección 2: Nuestros Servicios */
 section:nth-of-type(2) {
-  background-color: #003f46;
+  background-color: #f1f1f1;
   color: white;
 }
 section:nth-of-type(2) h2 {
@@ -123,10 +123,10 @@ section:nth-of-type(2) h2 {
 /* Sección 3: Áreas en las que servimos */
 section:nth-of-type(3) {
   background-color: #04353c;
-  color: white;
+  color: #222;
 }
 section:nth-of-type(3) h2 {
-  color: white;
+  color: #222;
 }
 
 /* Sección 4: Oficinas en el país */
@@ -149,6 +149,16 @@ section:nth-of-type(5) {
 }
 section:nth-of-type(5) h2 {
   color: white;
+}
+
+/* Página 2: Consulta de proyecto */
+.proyecto h2, .proyecto p, #resultado {
+  color: #000000;
+}
+
+/* Página de contacto */
+.contacto section, .contacto section h2, .contacto section p {
+  color: #000000;
 }
 
 section h2 {
