@@ -157,7 +157,7 @@ section:nth-of-type(5) h2 {
 }
 
 /* Página de contacto */
-.contacto section, .contacto section h2, .contacto section p {
+.contacto .info-contacto {
   color: #000000;
 }
 
