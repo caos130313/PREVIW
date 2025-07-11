@@ -19,10 +19,11 @@
     <section class="proyecto">
       <h2>Revisa aquí el estado de tu proyecto</h2>
       <p>Ingresa tu código para ver el estado actual</p>
+
       <input type="text" id="codigo" placeholder="Ingresa tu código de proceso">
       <button class="boton" onclick="buscarCodigo()">Buscar</button>
 
-      <div id="resultado">
+      <div id="resultado" style="display: none;">
         <h3>Información del Cliente</h3>
         <div><strong>Nombre:</strong> <span id="nombre"></span></div>
         <div><strong>ID:</strong> <span id="id"></span></div>
@@ -69,7 +70,6 @@
         estadoSpan.textContent = resultado.estado || "-";
         procesoSpan.textContent = resultado.proceso || "-";
         pagosSpan.textContent = resultado.pagos || "-";
-        resultadoDiv.style.display = 'block';
       } else {
         nombreSpan.textContent = 'No encontrado';
         idSpan.textContent = '-';
@@ -78,8 +78,9 @@
         estadoSpan.textContent = '-';
         procesoSpan.textContent = '-';
         pagosSpan.textContent = '-';
-        resultadoDiv.style.display = 'block';
       }
+
+      resultadoDiv.style.display = 'block';
     }
   </script>
 </body>
