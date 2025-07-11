@@ -1,3 +1,5 @@
+/* style.css */
+
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -8,6 +10,7 @@ body {
 h1, h2 {
   color: #002244;
   margin-bottom: 0.5em;
+  text-align: center;
 }
 
 a {
@@ -50,85 +53,64 @@ nav.hidden {
   display: none;
 }
 
-.hero-contact img {
+.hero img {
   width: 100%;
   height: auto;
   display: block;
 }
 
-.contacto-section {
-  text-align: center;
+.presentacion, .estado-proyecto, .servicios {
+  max-width: 1000px;
+  margin: 60px auto;
   padding: 40px 20px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
-.banner-contact {
-  width: 100%;
-  height: auto;
-  margin-bottom: 30px;
+.logo-secundario {
+  width: 80px;
+  margin-bottom: 20px;
 }
 
-.info-contacto {
-  text-align: left;
-  max-width: 600px;
-  margin: 0 auto 60px auto;
-  background-color: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+.presentacion p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
 }
 
-.info-contacto p {
-  margin: 10px 0;
-  font-size: 1rem;
-}
-
-.info-contacto i {
-  color: #cc0000;
-  margin-right: 10px;
-}
-
-.busqueda-proyecto {
-  max-width: 700px;
-  margin: 0 auto;
-  background: #ffffff;
-  padding: 30px 20px;
-  border-radius: 10px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-  margin-bottom: 60px;
-}
-
-input[type="text"] {
-  padding: 10px;
-  width: 300px;
-  max-width: 90%;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  margin-top: 20px;
-}
-
-button {
-  padding: 10px 20px;
+.boton {
+  display: inline-block;
+  padding: 12px 24px;
   background-color: #cc0000;
   color: white;
-  border: none;
-  border-radius: 5px;
-  margin-left: 10px;
-  cursor: pointer;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  margin-top: 10px;
 }
 
-button:hover {
+.boton:hover {
   background-color: #990000;
 }
 
-#resultado {
-  margin-top: 30px;
-  padding: 20px;
-  background: white;
-  display: none;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  width: 100%;
-  text-align: left;
+.servicios ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.servicios li {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.servicios li i {
+  margin-right: 10px;
+  color: #cc0000;
 }
 
 footer {
@@ -137,22 +119,16 @@ footer {
   text-align: center;
   padding: 20px;
   font-size: 0.9rem;
+  margin-top: 60px;
 }
 
-.boton-volver {
-  margin-top: 40px;
-}
+@media (max-width: 768px) {
+  .presentacion, .estado-proyecto, .servicios {
+    margin: 30px 15px;
+    padding: 30px 15px;
+  }
 
-.boton {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #cc0000;
-  color: white;
-  border-radius: 5px;
-  font-weight: bold;
-  transition: background-color 0.3s;
-}
-
-.boton:hover {
-  background-color: #990000;
+  .header-container {
+    flex-direction: column;
+  }
 }
